@@ -1,4 +1,4 @@
-# Django Voting App
+# Django Voting API
 
 Basic API for survey creation.
 
