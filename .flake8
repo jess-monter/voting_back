@@ -1,0 +1,11 @@
+[flake8]
+ignore = W503
+max-line-length = 100
+max-complexity = 13
+select = B,C,E,F,W,T4,B9,I,D
+
+[isort]
+default_section = THIRDPARTY
+known_django = django
+known_wagtail = wagtail
+sections = FUTURE,STDLIB,DJANGO,WAGTAIL,THIRDPARTY,FIRSTPARTY,LOCALFOLDER
