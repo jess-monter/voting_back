@@ -17,6 +17,7 @@ Clone the repository to your local machine, and run.
 - Follow the variables to a .env indicating your own credentials for your database and email.
 - Run poetry install
 - Run poetry shell
+- Run pre-commit install
 - Run ./manage.py migrate
 - Run ./manage.py runserver
 
