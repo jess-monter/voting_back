@@ -14,7 +14,7 @@ Clone the repository to your local machine, and run.
 
 ### Installing
 
-- Follow the variables to a .env indicating your own credentials for your database and email.
+- Follow the variables in the .env.sample to a .env indicating your own credentials for your database and email.
 - Run poetry install
 - Run poetry shell
 - Run pre-commit install
