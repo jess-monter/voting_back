@@ -28,6 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [os.environ.get("HOST", "localhost")]
 
+SITE_ID = 1
 
 # Application definition
 
@@ -38,6 +39,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # Notifications
+    "channels",
     # APPS
     "voting.apps.voting_auth",
     "voting.apps.survey",
@@ -126,6 +129,25 @@ EMAIL_PORT = os.environ.get("EMAIL_PORT")
 EMAIL_USE_TLS = os.environ.get("EMAIL_USE_TLS")
 DEFAULT_FROM_EMAIL = os.environ.get("DEFAULT_FROM_EMAIL")
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+
+# ASGI configuration
+
+ASGI_APPLICATION = "voting.asgi.application"
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [
+                (
+                    os.environ.get("REDIS_HOST").split(":")[0],
+                    os.environ.get("REDIS_HOST").split(":")[1],
+                )
+            ]
+        },
+    },
+}
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
